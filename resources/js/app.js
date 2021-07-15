@@ -130,3 +130,70 @@ function updateUI() {
     });
   }
   
+  // UPDATE CHART
+  let my_chart;
+  function axesLinearChart() {
+    if (my_chart) {
+      my_chart.destroy();
+    }
+  
+    my_chart = new Chart(ctx, {
+      type: "line",
+      data: {
+        datasets: [
+          {
+            label: "Cases",
+            data: cases_list,
+            fill: false,
+            borderColor: "#FFF",
+            backgroundColor: "#FFF",
+            borderWidth: 0.00001,
+          },
+          {
+            label: "Recovered",
+            data: recovered_list,
+            fill: false,
+            borderColor: "#108a7d",
+            backgroundColor: "#009688",
+            borderWidth: 0.00001,
+          },
+          {
+            label: "Deaths",
+            data: deaths_list,
+            fill: false,
+            borderColor: "#e23c30",
+            backgroundColor: "#f44336",
+            borderWidth: 0.00001,
+          },
+        ],
+        labels: formatedDates,
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    });
+  }
+  
+  // FORMAT DATES
+  const monthsNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  
+  function formatDate(dateString) {
+    let date = new Date(dateString);
+  
+    return `${date.getDate()} ${monthsNames[date.getMonth()]}`;
+  }
+  
