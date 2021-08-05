@@ -1,5 +1,5 @@
 # COVID-19_TRACKER
-https://ankit253.github.io/COVID_19_Tracker/
+[See Live updates here](https://ankit253.github.io/COVID_19_Tracker/)
 
 Creating responsive website usug HTML, CSS and JS
 <br/>
